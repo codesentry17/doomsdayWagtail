@@ -30,3 +30,6 @@ try:
     from .local import *
 except ImportError:
     pass
+
+
+print("DEBUG =",DEBUG)
