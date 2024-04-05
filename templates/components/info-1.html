@@ -1,0 +1,31 @@
+{% load static %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+<!-- About Start -->
+        <div class="container-fluid py-5 my-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="h-100 position-relative">
+                            {% image block.img1 fill-400x300 class="img-fluid w-75 rounded" alt="block.img1.title" style="margin-bottom: 25%;" %}
+                            <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                                {% image block.img2 fill-400x300 class="img-fluid w-100 rounded" alt="block.img2.title" %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h5 class="text-primary">{{block.pre_header}}</h5>
+                        <h1 class="mb-4">{{block.main_header}}</h1>
+                        <p>{{block.body}}</p>
+                        {% if block.page_redirect %}
+                        <a href="{{block.page_redirect.url}}" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+

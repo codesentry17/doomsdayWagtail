@@ -31,6 +31,7 @@ class Wiggle(Page):
         ],
         use_json_field=True,
         collapsed=True,
+        #blank=True,
     )
 
     content_panels = Page.content_panels + [FieldPanel("components")]
