@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "home",
     "pages",
     "streams",
+    "teammembers",
     "search",
 
     "wagtail_localize",
