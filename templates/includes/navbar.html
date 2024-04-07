@@ -1,0 +1,75 @@
+<!-- Navbar Start -->
+
+{% load wagtailcore_tags  %}
+
+<div class="container-fluid bg-primary pt-2" style="
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    border-bottom: 2px solid cyan;
+    ">
+    <div class="container">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+            <a href="{% if WebNameOnClick %}{{WebNameOnClick.url}}{% else %}#{% endif %}" class="navbar-brand">
+                <h1 class="text-white fw-bold d-block">{% if WebName1 %}{{WebName1}}{% endif %}<span class="text-secondary">{{WebName2}}</span> </h1>
+            </a>
+            <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse" style="padding-right: 20px;">
+                <div class="navbar-nav ms-auto mx-xl-auto p-0">                
+                    
+                    {% if tabs %}
+
+                    {% for tab in tabs %}
+
+                    {% if not tab.is_dropdown %}
+
+
+                    {% for component in tab.nav_links %}
+                    {% if component.block.name == 'Website_Page' %}
+                    <a href="{{component.value.url}}" class="nav-item nav-link {% if request.path == component.value.url %}active{% endif %}">{{tab.nav_title}}</a>
+                    {% else %}
+                    <a href="{{component.value.URL}}" class="nav-item nav-link {% if request.path == component.value.URL %}active{% endif %}">{{tab.nav_title}}</a>
+                    {% endif %}
+                    {% endfor %}
+
+
+                    {% else %}
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle {% if request.path in tab.routes %}active{% endif %}" data-bs-toggle="dropdown">{{tab.nav_title}}</a>
+                        <div class="dropdown-menu rounded">
+
+                            {% for component in tab.nav_links %}
+                            {% if component.block.name == 'Website_Page' %}
+                            <a href="{{component.value.url}}" class="dropdown-item {% if request.path == component.value.url %}active{% endif %}">{{component.value.title}}</a>
+                            {% else %}
+                            <a target="_blank" href="{{component.value.URL}}" class="dropdown-item {% if request.path == component.value.URL %}active{% endif %}">{{component.value.Title}}</a>
+                            {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+
+                    {% endif %}
+                    {% endfor %}
+
+
+                    {% endif %}
+                </div>
+            </div>
+            {% if page %}
+            {% for translation in page.get_translations.live %}
+            <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ translation.locale.language_code }}" class="navbar-brand">
+                <h1 class="text-white fw-bold d-block">{{ translation.locale.language_name_local }}</h1>
+            </a>
+            {% endfor %}
+            {% endif %}
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->

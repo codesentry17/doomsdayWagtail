@@ -22,7 +22,7 @@ class NavTab(Orderable):
 
     navbar = ParentalKey('Navbar', related_name='nav_tab')
 
-    nav_title = models.CharField(max_length=20, blank=True, null=True, help_text="Ignore if single page / external link")
+    nav_title = models.CharField(max_length=20, blank=True, null=True, help_text="Enter for Dropdown list")
 
     nav_links = StreamField(
         [
