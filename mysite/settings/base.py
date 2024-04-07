@@ -27,7 +27,9 @@ INSTALLED_APPS = [
     "pages",
     "streams",
     "teammembers",
+    "menus",
     "search",
+    "boto3",
 
     "wagtail_localize",
     "wagtail_localize.locales",
