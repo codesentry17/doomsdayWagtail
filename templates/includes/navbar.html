@@ -32,7 +32,7 @@
                     {% if component.block.name == 'Website_Page' %}
                     <a href="{{component.value.url}}" class="nav-item nav-link {% if request.path == component.value.url %}active{% endif %}">{{tab.nav_title}}</a>
                     {% else %}
-                    <a href="{{component.value.URL}}" class="nav-item nav-link {% if request.path == component.value.URL %}active{% endif %}">{{tab.nav_title}}</a>
+                    <a target="_blank" href="{{component.value.URL}}" class="nav-item nav-link {% if request.path == component.value.URL %}active{% endif %}">{{tab.nav_title}}</a>
                     {% endif %}
                     {% endfor %}
 

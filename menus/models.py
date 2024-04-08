@@ -64,7 +64,7 @@ class NavTab(Orderable):
             if self.nav_links[0].block.name == "Website_Page":
                 self.nav_title = self.nav_links[0].value.title
             else:
-                self.nav_title = self.nav_links[0].value.get('Title')
+                self.nav_title = self.nav_links[0].value.Title
 
         super(NavTab,self).save(**kwargs)
 
