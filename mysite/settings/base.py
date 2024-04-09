@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "streams",
     "teammembers",
     "menus",
+    "advert",
     "search",
     "boto3",
 
