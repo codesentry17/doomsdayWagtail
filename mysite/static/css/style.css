@@ -111,6 +111,19 @@
 
 
 /*** Navbar Start ***/
+
+.hidden-scroll {
+    transition: all 0.5s ease;
+    top: 0;
+    /* Initial position at the top of the page */
+}
+
+.scroll-up {
+    top: -80px;
+    /* Adjust the offset value as needed */
+}
+
+
 .navbar .navbar-nav {
     padding: 15px 0;
 }
