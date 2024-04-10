@@ -72,7 +72,7 @@ class Blog(Page):
     header_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
     )
