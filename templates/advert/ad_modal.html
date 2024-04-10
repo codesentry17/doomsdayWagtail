@@ -1,10 +1,11 @@
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailimages_tags %}
 
 <!-- Modal -->
 
 {% for ad in ads %}
 
-<div class="modal fade" id="exampleModal{{ad.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{ad.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content rounded-0">
             <div class="modal-body py-0">
@@ -15,8 +16,9 @@
 
                     <div class="container text-center""> 
                         <div class=" row mt-3 mb-3">
-                        <div class="col">
-                            <h2 style="font-size: 1.8em;">{{ad.title}}</h2>
+                            <div class="col">
+                                <h2 style="font-size: 1.8em;">{{ad.title}}</h2>
+                            </div>
                         </div>
 
                         <div class="row mt-3 mb-3  justify-content-center">
@@ -59,8 +61,7 @@
 
     </div>
 </div>
-</div>
-</div>
+
 
 
 
