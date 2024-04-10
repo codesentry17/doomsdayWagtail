@@ -85,7 +85,8 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
 
-                "menus.context_processor.navbar_request"
+                "menus.context_processor.navbar_request",
+                "advert.context_processor.get_ads"
             ],
         },
     },
