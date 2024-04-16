@@ -568,6 +568,36 @@
     transition: 1s;
 }
 
+
+#toc {
+    list-style-type: none;
+    padding: 0;
+}
+
+#toc li {
+        margin-bottom: 0px;
+    }
+
+#toc li a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    color: black;
+    font-family: "Saira", sans-serif;
+}
+
+#toc li a:hover {
+    background-color: var(--bs-secondary);
+    color: white;
+}
+
+/* Add horizontal line after each list item */
+#toc li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
 /*** Blog End ***/
 
 

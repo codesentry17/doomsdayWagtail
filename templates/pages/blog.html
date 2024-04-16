@@ -7,12 +7,18 @@
 {% include 'components/page_intro.html' %}
 
 <!-- Detail Start -->
-<div class="container py-5">
+<div class="container py-5" style="max-width: 1300px;">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-2">
+            <div id="sidebar"  style="position: sticky; top: 100px;">
+                <h3>Sections</h3>
+                <ul id="toc"></ul>
+            </div>
+        </div>
+        <div class="col-lg-7" id="blog_body">
             <div class="d-flex flex-column text-left mb-4">
                 <!-- <h5 class="text-primary mb-3">Blog Detail</h5> -->
-                <h1 class="mb-3">{{page.title}}</h1>
+                <h1 class="mb-3 display-2">{{page.title}}</h1>
                 <div class="d-index-flex mb-2">
                     <!-- <span class="mr-3"><i class="fa fa-user text-primary"></i> Admin</span>
                         <span class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</span> -->
@@ -29,7 +35,7 @@
                 {% if component.block.name == 'section' %}
                 {% with thing=component.value %}
 
-                <h2 class="mt-2 mb-4" style="clear: both;">{{thing.header}}</h2>
+                <h2 id="section{{forloop.counter}}"  class="mt-2 mb-4" style="clear: both;">{{thing.header}}</h2>
                 <!-- <img class="img-thumbnail p-3 w-50 float-left mr-4 mb-3" src="img/blog-1.jpg" alt="Image"> -->
                 {% if thing.image_position == "L" %}
                     {% image thing.image fill-500x500 class="img-thumbnail p-3 w-50 float-left mr-4 mb-3" alt="thing.image.title" %}
@@ -74,7 +80,7 @@
 
         </div>
 
-        <div class="col-lg-3 mt-5 mt-lg-0">
+        <div class="col-lg mt-5 mt-lg-0">
             <!-- <div class="mb-5">
                     <img src="img/blog-1.jpg" alt="" class="img-thumbnail p-3">
                 </div> -->
@@ -146,6 +152,33 @@
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })(); 
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const contentDiv = document.getElementById("blog_body");
+        const headers = contentDiv.querySelectorAll("h2");
+        const toc = document.getElementById("toc");
+
+        headers.forEach((header, index) => {
+            const id = `section${index + 1}`;
+            header.setAttribute("id", id);
+
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.textContent = header.textContent;
+            a.setAttribute("href", `#${id}`);
+            a.addEventListener("click", (event) => {
+                event.preventDefault();
+                const targetId = event.target.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            });
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+    });
 
 </script>
 

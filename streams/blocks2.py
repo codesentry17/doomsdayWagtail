@@ -18,7 +18,7 @@ class Section(blocks.StructBlock):
         
     )
 
-    body = blocks.RichTextBlock()
+    body = blocks.RichTextBlock(features=['bold', 'italic', 'ol', 'ul', 'hr', 'embed', 'link'])
 
     class Meta:
         help_text = "CREATING SECTIONS IN THIS BLOG POST"
