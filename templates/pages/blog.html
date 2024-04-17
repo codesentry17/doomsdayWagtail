@@ -38,7 +38,7 @@
                 <h2 id="section{{forloop.counter}}"  class="mt-2 mb-4" style="clear: both;">{{thing.header}}</h2>
                 <!-- <img class="img-thumbnail p-3 w-50 float-left mr-4 mb-3" src="img/blog-1.jpg" alt="Image"> -->
                 {% if thing.image_position == "L" %}
-                    {% image thing.image fill-500x500 class="img-thumbnail p-3 w-50 float-left mr-4 mb-3" alt="thing.image.title" %}
+                    {% image thing.image max-700x700 class="img-thumbnail p-3 w-50 float-left mr-4 mb-3" alt="thing.image.title" %}
                 {% elif thing.image_position == 'R' %}
                     {% image thing.image max-700x700 class="img-thumbnail p-3 w-50 float-right ml-4 mb-3" alt="thing.image.title" %}
                 {% else %}
