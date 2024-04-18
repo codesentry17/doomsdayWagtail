@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "menus",
     "advert",
     "search",
+    "ecg",
     "boto3",
 
     "wagtail_localize",
