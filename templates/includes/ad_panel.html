@@ -8,7 +8,7 @@
         <div class="carousel-item no-background {% if forloop.first %}active{% endif %}">
             <a data-bs-toggle="modal" href="#exampleModal{{ad.id}}" role="button" aria-expanded="false" aria-controls="collapseExample" style="color: black;">
                 <div class="blog-item">
-                    {% image ad.photo max-500x500 class="img-fluid w-100 rounded-top" alt="{{ad.photo.title}}" %}
+                    {% image ad.photo fill-500x300 class="img-fluid rounded-top" alt="{{ad.photo.title}}" %}
                     <div class="rounded-bottom bg-light">
                         <div class="px-4 pb-0" style="padding-top: 10px;">
                             <h6>{{ad.title}}</h6>
