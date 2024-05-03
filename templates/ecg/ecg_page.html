@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% load wagtailcore_tags  %}
+{% load wagtailcore_tags crispy_forms_tags %}
 
 
 
 {% block content %}
-
+<br><br><br>
 <h1>{{page.title}}</h1>
 
 
@@ -42,23 +42,6 @@
                                     <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message | संदेश पाठवा</button>
                                 </div>
                             </form>
-                            <!-- <form class="p-5 rounded contact-form" action="{% pageurl page %}" method="POST">
-                                {% csrf_token %}
-                                {% for field in form.visible_fields %}
-                                <div class="mb-4">
-                                    {{ field.errors }}
-                                    <h4 class="text-primary">
-                                        {{ field.label_tag }}{% if field.field.required %}<span class="asteriskField">*</span>{% endif %}
-                                    </h4>
-                                    <input type="{{ field.field.widget.input_type }}" class="form-control border-0 py-3"
-                                        name="{{ field.name }}" id="{{ field.id_for_label }}"
-                                        {% if field.field.required %}required="required"{% endif %}>
-                                </div>      
-                                {% endfor %}
-                                <div class="text-start">
-                                    <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message | संदेश पाठवा</button>
-                                </div>
-                            </form> -->
                         </div>
                     </div>
                 </div>
