@@ -44,3 +44,5 @@ style2.css
 !/mysite/static/
 
 django_error.log
+
+*.h5

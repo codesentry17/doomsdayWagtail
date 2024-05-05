@@ -5,5 +5,16 @@
 
 {% block content %}
 <br><br><br>
-<h1>{{context}}</h1>
+<article>
+    {% for block in page.classification %}
+
+    {% if block.block_type == 'prediction' %}
+    <div>
+        <h3>{{block.value.label}}</h3>
+        <p>{{block.value.description}}</p>
+    </div>
+    {% endif %}
+
+    {% endfor %}
+</article>
 {% endblock %}
