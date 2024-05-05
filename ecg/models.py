@@ -7,6 +7,8 @@ from wagtail.admin.panels import FieldPanel, MultiFieldPanel, InlinePanel
 from wagtail.fields import StreamField, RichTextField
 from wagtail import blocks
 
+from .views import predictionFunction
+
 # Create your models here.
 
 
@@ -52,8 +54,15 @@ class EcgPage(Page):
             if form.is_valid():
                 print("Got the image")
 
+                mypic1 = form.cleaned_data['mypic1']
+                randomInput = form.cleaned_data['randomInput']
+
+                print(predictionFunction(mypic1))
+
                 return render(request, 'ecg/ecg_result.html', {
-                    'page':self
+                    'page':self,
+                    'ecg_pic':mypic1,
+                    'randomInput':randomInput
                     }
                 )
             else:

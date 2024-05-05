@@ -6,6 +6,12 @@
 {% block content %}
 <br><br><br>
 <article>
+
+    <img src="{{ ecg_pic.url }}" alt="Your Image">
+    <br><br>
+
+    <h1>{{randomInput}}</h1>
+
     {% for block in page.classification %}
 
     {% if block.block_type == 'prediction' %}
