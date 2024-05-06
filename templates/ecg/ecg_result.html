@@ -5,27 +5,10 @@
 
 {% block content %}
 <br><br><br>
-<article>
+hello
+{{page.title}}
+{{page.label}}
+{{page.description|richtext}}
 
-    <br><br>
 
-    <h1>{{randomInput}}</h1>
-
-    {% for block in page.classification %}
-
-    {% if block.block_type == 'prediction' %}
-
-    {% if block.value.label == predicted_label %}
-
-    <div>
-        <h3>{{block.value.label}}</h3>
-        <p>{{block.value.description}}</p>
-    </div>
-
-    {% endif %}
-    
-    {% endif %}
-
-    {% endfor %}
-</article>
 {% endblock %}

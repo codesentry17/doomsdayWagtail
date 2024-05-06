@@ -5,56 +5,82 @@
 
 
 {% block content %}
-<br><br><br>
-<h1>{{page.title}}</h1>
 
-
-<!-- Contact Start -->
+<!-- Features Start -->
 <div class="container py-5 mt-5">
     <div class="row">
-        <div class="{% if page.show_advertisement %} col-9 {% else %} col {% endif %} ">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h1 class="mb-3 text-primary" style="font-size: 4em;">{{page.header}}</h1>
-                    <p class="mb-2">{{page.sub_header}}</p>
+        <div class="col-lg-5 mb-5">
+
+            <form class="p-5 rounded contact-form" action="{% pageurl page %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{  form|crispy }}
+                <div class="text-start">
+                    <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message | संदेश पाठवा</button>
                 </div>
-                <div class="contact-detail position-relative p-5">
-                    {% if page.extra_info %}
-                    <div class="row g-5 mb-5 justify-content-center">
-                        {% for block in page.extra_info %}
-                        <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                            <div class="d-flex bg-light p-3 rounded">
-                                <div class="ms-3">
-                                    <h4 class="text-primary">{{block.value.label}}</h4>
-                                    <div class="h5">{{block.value.description}}</div>
-                                </div>
-                            </div>
+            </form>
+
+            
+        </div>
+        <div class="col-lg-7">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="flaticon-policeman font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">High Security</h6>
                         </div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    <div class="row g-5">
-                        <div class="col-lg-11 wow fadeIn" style="margin-left: auto; margin-right: auto;" data-wow-delay=".5s">
-                            <form class="p-5 rounded contact-form" action="{% pageurl page %}" method="POST" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{  form|crispy }}
-                                <div class="text-start">
-                                    <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message | संदेश पाठवा</button>
-                                </div>
-                            </form>
-                        </div>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos rebum sit</p>
                     </div>
                 </div>
-            </div> 
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="flaticon-bodyguard font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Trained Guards</h6>
+                        </div>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos rebum sit</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="flaticon-approved font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Govt Approved</h6>
+                        </div>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos rebum sit</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="flaticon-medal font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Award Winning</h6>
+                        </div>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos rebum sit</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="flaticon-helmet font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">Latest Equipments</h6>
+                        </div>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos rebum sit</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="flaticon-surveillance font-weight-normal d-flex flex-shrink-0 align-items-center justify-content-center bg-primary text-white m-0 mr-3" style="width: 45px; height: 45px;"></h3>
+                            <h6 class="text-truncate m-0">24/7 Support</h6>
+                        </div>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos rebum sit</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% if page.show_advertisement %}
-        <div class="col">
-            <!--  showing Advetisement if enabled -->
-            {% include 'includes/ad_panel.html' %}
-        </div>
-        {% endif %}
     </div>
 </div>
-<!-- Contact End -->
+<!-- Features End -->
 
 {% endblock %}
