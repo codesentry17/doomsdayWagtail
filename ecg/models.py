@@ -55,14 +55,15 @@ class EcgPage(Page):
                 print("Got the image")
 
                 mypic1 = form.cleaned_data['mypic1']
-                randomInput = form.cleaned_data['randomInput']
 
-                print(predictionFunction(mypic1))
+                # un-used
+                # randomInput = form.cleaned_data['randomInput']
+
+                predicted_label = predictionFunction(mypic1)
 
                 return render(request, 'ecg/ecg_result.html', {
                     'page':self,
-                    'ecg_pic':mypic1,
-                    'randomInput':randomInput
+                    'predicted_label':predicted_label
                     }
                 )
             else:

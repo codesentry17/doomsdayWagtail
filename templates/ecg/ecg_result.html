@@ -7,7 +7,6 @@
 <br><br><br>
 <article>
 
-    <img src="{{ ecg_pic.url }}" alt="Your Image">
     <br><br>
 
     <h1>{{randomInput}}</h1>
@@ -15,10 +14,16 @@
     {% for block in page.classification %}
 
     {% if block.block_type == 'prediction' %}
+
+    {% if block.value.label == predicted_label %}
+
     <div>
         <h3>{{block.value.label}}</h3>
         <p>{{block.value.description}}</p>
     </div>
+
+    {% endif %}
+    
     {% endif %}
 
     {% endfor %}
